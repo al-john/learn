@@ -657,8 +657,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGOUT_USER", function() { return LOGOUT_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECOVER_ACCOUNT", function() { return RECOVER_ACCOUNT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RESET_PASSWORD", function() { return RESET_PASSWORD; });
-var LOGIN_USER = function () { return 'api/login/'; };
-var LOGOUT_USER = function () { return 'api/logout/'; };
+var LOGIN_USER = function () { return 'api/login'; };
+var LOGOUT_USER = function () { return 'api/logout'; };
 var RECOVER_ACCOUNT = function () { return 'api/recover'; };
 var RESET_PASSWORD = function () { return 'api/reset-password'; };
 
