@@ -9,7 +9,7 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('font-awesome/css/font-awesome.min.css') }}" />
 </head>
 <body>
-  {{ url('index')}}
+  
   <app-root></app-root>
 
   <script type="text/javascript" src="{{ asset('app/polyfills.js') }}"></script>
