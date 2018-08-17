@@ -365,7 +365,7 @@ var LoginComponent = /** @class */ (function () {
             _this.stateService.go('home');
         }, function (error) {
             _this.flash.show(error.error.error, {});
-            console.log(typeof (error));
+            console.log(error);
         });
     };
     LoginComponent = __decorate([

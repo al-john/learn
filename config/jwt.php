@@ -297,8 +297,6 @@ return [
         */
 
         'storage' => Tymon\JWTAuth\Providers\Storage\Illuminate::class,
-
-        'app_ss' => app\Http\Providers\AppServiceProvider::class,
     ],
 
 ];
