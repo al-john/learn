@@ -45,7 +45,7 @@ class PasswordResetController extends Controller
         if($success){
             return response()->json(['data'=>'Password reset link sent. Please check your email.'], Response::HTTP_OK);
         }
-        return response()->json(['error'=>'Your email could not be found in the system. Please try again with other information.'],Response::HTTP_NOT_FOUND);
+        return response()->json(['error'=>'We cant find an account with this credentials. Please make sure you entered the right information.'],Response::HTTP_NOT_FOUND);
     }
 
     public function change_password(ChangePasswordRequest $request)

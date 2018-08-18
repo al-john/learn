@@ -56,23 +56,32 @@ module.exports = "<ui-view name=\"content\"></ui-view>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_token_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/token.service */ "./src/app/services/token.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(token) {
+        this.token = token;
         this.title = 'learning-app';
     }
+    AppComponent.prototype.ngOnInit = function () {
+    };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
-        })
+        }),
+        __metadata("design:paramtypes", [_services_token_service__WEBPACK_IMPORTED_MODULE_1__["TokenService"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -106,6 +115,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_header_header_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/header/header.component */ "./src/app/components/header/header.component.ts");
 /* harmony import */ var _components_forms_recover_recover_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/forms/recover/recover.component */ "./src/app/components/forms/recover/recover.component.ts");
 /* harmony import */ var _components_forms_password_reset_password_reset_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/forms/password-reset/password-reset.component */ "./src/app/components/forms/password-reset/password-reset.component.ts");
+/* harmony import */ var _components_header_nav_nav_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/header/nav/nav.component */ "./src/app/components/header/nav/nav.component.ts");
+/* harmony import */ var _components_main_main_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/main/main.component */ "./src/app/components/main/main.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -128,6 +139,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -140,6 +153,8 @@ var AppModule = /** @class */ (function () {
                 _components_header_header_component__WEBPACK_IMPORTED_MODULE_11__["HeaderComponent"],
                 _components_forms_recover_recover_component__WEBPACK_IMPORTED_MODULE_12__["RecoverComponent"],
                 _components_forms_password_reset_password_reset_component__WEBPACK_IMPORTED_MODULE_13__["PasswordResetComponent"],
+                _components_header_nav_nav_component__WEBPACK_IMPORTED_MODULE_14__["NavComponent"],
+                _components_main_main_component__WEBPACK_IMPORTED_MODULE_15__["MainComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -171,11 +186,11 @@ var AppModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APP_STATES", function() { return APP_STATES; });
 /* harmony import */ var _utils_layouts_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/layouts.utils */ "./src/app/utils/layouts.utils.ts");
-/* harmony import */ var _components_contents_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/contents/dashboard/dashboard.component */ "./src/app/components/contents/dashboard/dashboard.component.ts");
-/* harmony import */ var _components_forms_login_login_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/forms/login/login.component */ "./src/app/components/forms/login/login.component.ts");
-/* harmony import */ var _components_forms_recover_recover_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/forms/recover/recover.component */ "./src/app/components/forms/recover/recover.component.ts");
-/* harmony import */ var _components_forms_password_reset_password_reset_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/forms/password-reset/password-reset.component */ "./src/app/components/forms/password-reset/password-reset.component.ts");
-/* harmony import */ var _uirouter_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @uirouter/core */ "./node_modules/@uirouter/core/lib-esm/index.js");
+/* harmony import */ var _components_forms_login_login_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/forms/login/login.component */ "./src/app/components/forms/login/login.component.ts");
+/* harmony import */ var _components_forms_recover_recover_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/forms/recover/recover.component */ "./src/app/components/forms/recover/recover.component.ts");
+/* harmony import */ var _components_forms_password_reset_password_reset_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/forms/password-reset/password-reset.component */ "./src/app/components/forms/password-reset/password-reset.component.ts");
+/* harmony import */ var _uirouter_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @uirouter/core */ "./node_modules/@uirouter/core/lib-esm/index.js");
+/* harmony import */ var _components_main_main_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/main/main.component */ "./src/app/components/main/main.component.ts");
 
 
 
@@ -186,32 +201,32 @@ var HOME_STATE = [
     {
         name: 'home',
         url: '/',
-        views: Object(_utils_layouts_utils__WEBPACK_IMPORTED_MODULE_0__["ContentOnly"])(_components_contents_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_1__["DashboardComponent"]),
+        views: Object(_utils_layouts_utils__WEBPACK_IMPORTED_MODULE_0__["ContentOnly"])(_components_main_main_component__WEBPACK_IMPORTED_MODULE_5__["MainComponent"]),
     }
 ];
 var LOGIN_STATE = [
     {
         name: 'login',
         url: '/login',
-        views: Object(_utils_layouts_utils__WEBPACK_IMPORTED_MODULE_0__["ContentOnly"])(_components_forms_login_login_component__WEBPACK_IMPORTED_MODULE_2__["LoginComponent"]),
+        views: Object(_utils_layouts_utils__WEBPACK_IMPORTED_MODULE_0__["ContentOnly"])(_components_forms_login_login_component__WEBPACK_IMPORTED_MODULE_1__["LoginComponent"]),
     }
 ];
 var RECOVER_STATE = [
     {
         name: 'recover',
         url: '/recover',
-        views: Object(_utils_layouts_utils__WEBPACK_IMPORTED_MODULE_0__["ContentOnly"])(_components_forms_recover_recover_component__WEBPACK_IMPORTED_MODULE_3__["RecoverComponent"]),
+        views: Object(_utils_layouts_utils__WEBPACK_IMPORTED_MODULE_0__["ContentOnly"])(_components_forms_recover_recover_component__WEBPACK_IMPORTED_MODULE_2__["RecoverComponent"]),
     }
 ];
 var PASSWORD_RESET_STATE = [
     {
         name: 'password-reset',
         url: '/password-reset?token=',
-        views: Object(_utils_layouts_utils__WEBPACK_IMPORTED_MODULE_0__["ContentOnly"])(_components_forms_password_reset_password_reset_component__WEBPACK_IMPORTED_MODULE_4__["PasswordResetComponent"]),
+        views: Object(_utils_layouts_utils__WEBPACK_IMPORTED_MODULE_0__["ContentOnly"])(_components_forms_password_reset_password_reset_component__WEBPACK_IMPORTED_MODULE_3__["PasswordResetComponent"]),
         resolve: [
             {
                 token: 'reset',
-                deps: [_uirouter_core__WEBPACK_IMPORTED_MODULE_5__["Transition"]],
+                deps: [_uirouter_core__WEBPACK_IMPORTED_MODULE_4__["Transition"]],
                 resolveFn: function (trans) { return null; }
             }
         ]
@@ -232,7 +247,7 @@ var APP_STATES = {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header></app-header>"
+module.exports = ""
 
 /***/ }),
 
@@ -310,7 +325,7 @@ module.exports = "\r\n\r\n/* .ng-invalid:not(form){\r\n    border-left: 5px soli
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-wrap\">  \n  <div class=\"container\">\n    <div class=\"row justify-content-center\">\n      <div class=\"form-content col-sm-4 mt-4\">\n        \n        <h3 class=\"text-center my-4\">LOGIN</h3>\n        <flash-messages></flash-messages>\n        <div class=\"col-sm-12\">\n          <form #loginForm=ngForm (ngSubmit)=\"login()\">\n            <div class=\"form-group\">\n              <input type=\"email\" class=\"form-control form-control-sm\" placeholder=\"Email\" name=\"email\" [(ngModel)]=\"form.email\" email required>\n            </div>\n            <div class=\"form-group\">\n              <input type=\"password\" class=\"form-control form-control-sm\" placeholder=\"Password\" [(ngModel)]=\"form.password\" name=\"password\" required>\n            </div> \n            <!-- <div class=\"input-group mb-3\">\n              <input type=\"text\" class=\"form-control\" placeholder=\"Search\" aria-label=\"Search\" aria-describedby=\"my-search\">\n              <div class=\"input-group-append\">\n                <span class=\"input-group-text\" id=\"my-search\"><i class=\"fa fa-filter\"></i></span>\n              </div>\n            </div> -->\n            <div class=\"form-group mt-4\">\n              <a uiSref=\"recover\" class=\"float-right mt-2\">Forgot password?</a>\n              <button type=\"submit\" class=\"btn btn-primary btn-flat\" [disabled]=\"!loginForm.valid\">Login</button>\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"form-wrap\">  \n<app-header ></app-header>\n  <div class=\"container\">\n    <div class=\"row justify-content-center\">\n      <div class=\"form-content col-sm-4 mt-4\">\n        \n        <h3 class=\"text-center my-4\">LOGIN</h3>\n        <flash-messages></flash-messages>\n        <div class=\"col-sm-12\">\n          <form #loginForm=ngForm (ngSubmit)=\"login()\">\n            <div class=\"form-group\">\n              <input type=\"email\" class=\"form-control form-control-sm\" placeholder=\"Email\" name=\"email\" [(ngModel)]=\"form.email\" email required>\n            </div>\n            <div class=\"form-group\">\n              <input type=\"password\" class=\"form-control form-control-sm\" placeholder=\"Password\" [(ngModel)]=\"form.password\" name=\"password\" required>\n            </div> \n            <!-- <div class=\"input-group mb-3\">\n              <input type=\"text\" class=\"form-control\" placeholder=\"Search\" aria-label=\"Search\" aria-describedby=\"my-search\">\n              <div class=\"input-group-append\">\n                <span class=\"input-group-text\" id=\"my-search\"><i class=\"fa fa-filter\"></i></span>\n              </div>\n            </div> -->\n            <div class=\"form-group mt-4\">\n              <a uiSref=\"recover\" class=\"float-right mt-2\">Forgot password?</a>\n              <button type=\"submit\" class=\"btn btn-primary btn-flat\" [disabled]=\"!loginForm.valid\">Login</button>\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -331,6 +346,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_token_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../services/token.service */ "./src/app/services/token.service.ts");
 /* harmony import */ var _node_modules_angular2_flash_messages__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../node_modules/angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
 /* harmony import */ var _node_modules_angular2_flash_messages__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_angular2_flash_messages__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var events__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! events */ "./node_modules/events/events.js");
+/* harmony import */ var events__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(events__WEBPACK_IMPORTED_MODULE_6__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -346,6 +363,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var LoginComponent = /** @class */ (function () {
     function LoginComponent(authService, stateService, token, flash) {
         this.authService = authService;
@@ -353,8 +371,12 @@ var LoginComponent = /** @class */ (function () {
         this.token = token;
         this.flash = flash;
         this.form = new _models_user_model__WEBPACK_IMPORTED_MODULE_3__["User"]();
+        this.statusEvent = new events__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
     }
     LoginComponent.prototype.ngOnInit = function () {
+        if (this.token.get()) {
+            this.stateService.go('home');
+        }
     };
     LoginComponent.prototype.login = function () {
         var _this = this;
@@ -362,12 +384,17 @@ var LoginComponent = /** @class */ (function () {
         this.authService.loginUser(credits).
             subscribe(function (response) {
             _this.token.handle(response['access_token']);
+            _this.statusEvent.emit('true');
             _this.stateService.go('home');
         }, function (error) {
             _this.flash.show(error.error.error, {});
             console.log(error);
         });
     };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], LoginComponent.prototype, "statusEvent", void 0);
     LoginComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-login',
@@ -445,6 +472,7 @@ var PasswordResetComponent = /** @class */ (function () {
         console.log(this.form);
         this.http.changePassword(this.form)
             .subscribe(function (response) {
+            localStorage.removeItem('reset_token');
             console.log(response);
         }, function (error) {
             console.log(error);
@@ -568,7 +596,7 @@ var RecoverComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n    <a href=\"#\" class=\"navbar-brand\">Header</a>\n\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#nav-responsive\" aria-controls=\"nav-responsive\" aria-expanded=\"true\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"nav-responsive\">\n        <ul class=\"navbar-nav ml-auto\">\n            <li class=\"nav-item\">                        \n                <a href=\"#\" (click)=\"logout()\">Log-out</a>\n            </li>\n        </ul>\n        \n    </div>\n</nav>"
+module.exports = "<header class=\"header\">\n  <div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-12\">\n            \n\n        </div>\n    </div>\n  </div>\n</header>\n<nav class=\"navbar nav-inverse\">\n  <div class=\"container\">\n      <img class=\"img-fluid\" src=\"app/assets/img/logo.png\" alt=\"\">\n  </div>\n</nav>\n<app-nav></app-nav>"
 
 /***/ }),
 
@@ -618,15 +646,6 @@ var HeaderComponent = /** @class */ (function () {
     }
     HeaderComponent.prototype.ngOnInit = function () {
     };
-    HeaderComponent.prototype.logout = function () {
-        var _this = this;
-        var token = { 'token': localStorage.getItem('token') };
-        this.auth.logoutUser(token)
-            .subscribe(function () {
-            _this.token.remove();
-            _this.stateService.go('login');
-        });
-    };
     HeaderComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-header',
@@ -638,6 +657,154 @@ var HeaderComponent = /** @class */ (function () {
             _node_modules_uirouter_core__WEBPACK_IMPORTED_MODULE_3__["StateService"]])
     ], HeaderComponent);
     return HeaderComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/header/nav/nav.component.html":
+/*!**********************************************************!*\
+  !*** ./src/app/components/header/nav/nav.component.html ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#nav-responsive\" aria-controls=\"nav-responsive\" aria-expanded=\"true\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <div class=\"navbar-collapse collapse\" id=\"nav-responsive\">\n    <ul *ngIf=\"is_logged_in\" class=\"navbar-nav ml-auto\">\n      \n        <li class=\"nav-item\">                        \n          <a class=\"nav-link\" href=\"#\">Students</a>\n        </li>\n        <li class=\"nav-item\">                        \n          <a class=\"nav-link\" href=\"#\">Class</a>\n        </li>\n        <li class=\"nav-item\">                        \n          <a class=\"nav-link\" href=\"#\">Reading Materials</a>\n        </li>\n        <li class=\"nav-item\">                        \n          <a class=\"nav-link\" href=\"#\" (click)=\"logout()\">Log-out</a>\n        </li>\n      </ul>        \n  </div>\n</nav>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/header/nav/nav.component.scss":
+/*!**********************************************************!*\
+  !*** ./src/app/components/header/nav/nav.component.scss ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".navbar {\n  padding: 0 1rem; }\n"
+
+/***/ }),
+
+/***/ "./src/app/components/header/nav/nav.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/components/header/nav/nav.component.ts ***!
+  \********************************************************/
+/*! exports provided: NavComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavComponent", function() { return NavComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_token_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../services/token.service */ "./src/app/services/token.service.ts");
+/* harmony import */ var _node_modules_uirouter_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/@uirouter/core */ "./node_modules/@uirouter/core/lib-esm/index.js");
+/* harmony import */ var _services_authentication_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../services/authentication.service */ "./src/app/services/authentication.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var NavComponent = /** @class */ (function () {
+    function NavComponent(token, stateService, auth) {
+        this.token = token;
+        this.stateService = stateService;
+        this.auth = auth;
+        this.is_logged_in = false;
+    }
+    NavComponent.prototype.ngOnInit = function () {
+        this.is_logged_in = this.token.is_valid();
+    };
+    NavComponent.prototype.logout = function () {
+        var _this = this;
+        this.auth.logoutUser()
+            .subscribe(function () {
+            _this.token.remove();
+            _this.is_logged_in = false;
+            _this.stateService.go('login');
+        }, function (error) { console.log(error); });
+    };
+    NavComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-nav',
+            template: __webpack_require__(/*! ./nav.component.html */ "./src/app/components/header/nav/nav.component.html"),
+            styles: [__webpack_require__(/*! ./nav.component.scss */ "./src/app/components/header/nav/nav.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_services_token_service__WEBPACK_IMPORTED_MODULE_1__["TokenService"],
+            _node_modules_uirouter_core__WEBPACK_IMPORTED_MODULE_2__["StateService"],
+            _services_authentication_service__WEBPACK_IMPORTED_MODULE_3__["AuthenticationService"]])
+    ], NavComponent);
+    return NavComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/main/main.component.html":
+/*!*****************************************************!*\
+  !*** ./src/app/components/main/main.component.html ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<app-header ></app-header>"
+
+/***/ }),
+
+/***/ "./src/app/components/main/main.component.scss":
+/*!*****************************************************!*\
+  !*** ./src/app/components/main/main.component.scss ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/main/main.component.ts":
+/*!***************************************************!*\
+  !*** ./src/app/components/main/main.component.ts ***!
+  \***************************************************/
+/*! exports provided: MainComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainComponent", function() { return MainComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MainComponent = /** @class */ (function () {
+    function MainComponent() {
+    }
+    MainComponent.prototype.ngOnInit = function () {
+    };
+    MainComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-main',
+            template: __webpack_require__(/*! ./main.component.html */ "./src/app/components/main/main.component.html"),
+            styles: [__webpack_require__(/*! ./main.component.scss */ "./src/app/components/main/main.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MainComponent);
+    return MainComponent;
 }());
 
 
@@ -721,14 +888,15 @@ var AuthenticationService = /** @class */ (function () {
         this.tokenService = tokenService;
     }
     AuthenticationService.prototype.authenticate = function () {
-        if (!this.tokenService.get()) {
+        if (!this.tokenService.is_valid()) {
             this.stateService.go('login');
         }
     };
     AuthenticationService.prototype.loginUser = function (credentials) {
         return this.http.post(Object(_constants_urls__WEBPACK_IMPORTED_MODULE_3__["LOGIN_USER"])(), credentials);
     };
-    AuthenticationService.prototype.logoutUser = function (token) {
+    AuthenticationService.prototype.logoutUser = function () {
+        var token = { 'token': this.tokenService.get() };
         return this.http.post(Object(_constants_urls__WEBPACK_IMPORTED_MODULE_3__["LOGOUT_USER"])(), token);
     };
     AuthenticationService.prototype.recoverAccount = function (email) {
@@ -788,6 +956,9 @@ var TokenService = /** @class */ (function () {
     };
     TokenService.prototype.remove = function () {
         localStorage.removeItem(this.token_name);
+    };
+    TokenService.prototype.is_valid = function () {
+        return this.get() !== null;
     };
     TokenService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({

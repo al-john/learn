@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use JWTAuth;
 
 class AuthController extends Controller
 {
@@ -25,8 +26,8 @@ class AuthController extends Controller
     public function login()
     {
         $credentials = request(['email', 'password']);
-
-        if (! $token = auth()->attempt($credentials)) {
+        $credentials['is_active'] = 1;
+        if (!$token = JWTAuth::attempt($credentials)) {
             return response()->json(['error' => 'Invalid credentials. Pleastry again.'], 401);
         }
 

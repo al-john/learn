@@ -12,6 +12,7 @@
   
   <app-root></app-root>
 
+  <script type="text/javascript" src="{{ asset('app/scripts.js') }}"></script>
   <script type="text/javascript" src="{{ asset('app/polyfills.js') }}"></script>
   <script type="text/javascript" src="{{ asset('app/styles.js') }}"></script>
   <script type="text/javascript" src="{{ asset('app/vendor.js') }}"></script>
